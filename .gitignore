@@ -1,0 +1,9 @@
+# Fichier de configuration contenant les clés API sensibles
+config.php
+Cong.php
+
+# Dépendances (si Composer est utilisé)
+vendor/
+
+# Fichiers de cache ou logs
+*.log

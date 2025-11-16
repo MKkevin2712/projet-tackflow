@@ -1,0 +1,114 @@
+/* Fichier: style.css */
+
+/* Variables de base */
+:root {
+    --primary-color: #4CAF50; /* Vert pour les boutons/actions */
+    --secondary-color: #3f3f3f; /* Gris foncé pour le fond */
+    --text-color: #333;
+    --box-bg-color: #fff;
+    --border-color: #ccc;
+    --error-color: #ff4d4f;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: var(--secondary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* Conteneur principal */
+.login-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+}
+
+/* Boîte de connexion (basée sur la maquette) */
+.login-box {
+    background-color: var(--box-bg-color);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.logo {
+    color: var(--primary-color);
+    margin-bottom: 5px;
+    font-size: 2em;
+}
+
+h2 {
+    color: var(--text-color);
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+
+/* Formulaire */
+.form-group {
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    box-sizing: border-box; /* Inclut le padding dans la largeur */
+}
+
+/* Bouton */
+.btn-primary {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #388e3c;
+}
+
+/* Message d'erreur/statut */
+.message-status {
+    min-height: 20px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    color: var(--error-color);
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Séparateur pour le lien S'inscrire */
+.separator {
+    border-top: 1px solid var(--border-color);
+    margin: 20px 0 15px 0;
+}
+
+.link-signup a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+}
