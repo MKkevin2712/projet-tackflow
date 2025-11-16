@@ -1,7 +1,7 @@
 // Fichier: script.js
 
 // L'URL de base de l'API REST (doit correspondre à la constante API_BASE_URL en PHP)
-const API_BASE_URL = 'http://localhost:8000/api'; 
+const API_BASE_URL = 'http://localhost:8080/api'; 
 const LOGIN_ENDPOINT = `${API_BASE_URL}/auth/login`;
 
 document.getElementById('login-form').addEventListener('submit', handleLogin);
