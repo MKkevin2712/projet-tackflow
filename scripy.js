@@ -1,16 +1,13 @@
-// Fichier: script.js
+// Fichier: scripy.js
 
-// L'URL de base de l'API REST (doit correspondre à la constante API_BASE_URL en PHP)
+// L'URL de base de l'API REST (Ajusté pour le port 8080)
 const API_BASE_URL = 'http://localhost:8080/api'; 
 const LOGIN_ENDPOINT = `${API_BASE_URL}/auth/login`;
-
-document.getElementById('login-form').addEventListener('submit', handleLogin);
 
 const messageElement = document.getElementById('message-status');
 
 /**
  * Récupère la valeur d'une variable CSS.
- * @param {string} name - Ex: '--primary-color'.
  */
 function getCssVariable(name) {
     return getComputedStyle(document.documentElement).getPropertyValue(name).trim();
@@ -20,7 +17,9 @@ function getCssVariable(name) {
  * Gère la soumission du formulaire de connexion et l'appel à l'API.
  */
 async function handleLogin(event) {
+    // Empêche le rechargement de la page si c'est une soumission de formulaire
     event.preventDefault(); 
+    
     messageElement.textContent = 'Connexion en cours...';
     messageElement.style.color = '#333';
 
@@ -37,18 +36,18 @@ async function handleLogin(event) {
         const data = await response.json();
 
         if (response.ok) {
-            // Connexion réussie (Statut 200 OK)
+            // Statut 200 OK
             messageElement.textContent = 'Connexion réussie ! Redirection...';
             messageElement.style.color = getCssVariable('--primary-color'); 
             
-            // Stockage du jeton JWT et du rôle
+            // Stockage du jeton JWT et du rôle pour les requêtes sécurisées
             localStorage.setItem('taskflow_token', data.token);
             localStorage.setItem('taskflow_role', data.role);
 
             // window.location.href = 'dashboard.html'; 
             
         } else {
-            // Connexion échouée (Statut 401 Unauthorized, etc.)
+            // Statut 401 Unauthorized, etc.
             messageElement.textContent = data.message || 'Identifiants invalides ou erreur API.';
             messageElement.style.color = getCssVariable('--error-color'); 
         }
@@ -59,3 +58,15 @@ async function handleLogin(event) {
         messageElement.style.color = getCssVariable('--error-color');
     }
 }
+
+// Lier l'événement de soumission du formulaire pour garantir que le bouton fonctionne
+document.addEventListener('DOMContentLoaded', () => {
+    const loginForm = document.getElementById('login-form');
+
+    if (loginForm) {
+        // Lier à l'événement 'submit' du formulaire (méthode préférée)
+        loginForm.addEventListener('submit', handleLogin);
+    } else {
+        console.error("Erreur critique: Formulaire de connexion non trouvé.");
+    }
+});

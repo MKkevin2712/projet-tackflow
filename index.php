@@ -2,16 +2,16 @@
 // Fichier : index.php - Le Routeur Principal de l'API TaskFlow
 
 // -----------------------------------------------------------------
-// 1. INCLUSIONS
+// 1. INCLUSIONS (CORRIGÉ : Utilisation de __DIR__ pour le chemin absolu)
 // -----------------------------------------------------------------
-require_once 'config.php';
-require_once 'ApiClient.php';
-require_once 'AuthMiddleware.php';
-require_once 'UserController.php';
-require_once 'TaskController.php';
-require_once 'CommentController.php';
-require_once 'DashboardController.php';
-require_once 'AdminController.php';
+require_once __DIR__ . '/config.php';
+require_once __DIR__ . '/ApiClient.php';
+require_once __DIR__ . '/AuthMiddleware.php';
+require_once __DIR__ . '/UserController.php';
+require_once __DIR__ . '/TaskController.php';
+require_once __DIR__ . '/CommentController.php';
+require_once __DIR__ . '/DashboardController.php';
+require_once __DIR__ . '/AdminController.php';
 
 
 // -----------------------------------------------------------------

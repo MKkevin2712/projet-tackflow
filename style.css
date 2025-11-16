@@ -27,7 +27,7 @@ body {
     padding: 20px;
 }
 
-/* Boîte de connexion (basée sur la maquette) */
+/* Boîte de connexion */
 .login-box {
     background-color: var(--box-bg-color);
     padding: 30px;
@@ -50,7 +50,7 @@ h2 {
     font-weight: 400;
 }
 
-/* Formulaire */
+/* Formulaire et entrées */
 .form-group {
     text-align: left;
     margin-bottom: 15px;
@@ -69,10 +69,10 @@ input[type="password"] {
     padding: 10px;
     border: 1px solid var(--border-color);
     border-radius: 4px;
-    box-sizing: border-box; /* Inclut le padding dans la largeur */
+    box-sizing: border-box; 
 }
 
-/* Bouton */
+/* Bouton et résilience au clic */
 .btn-primary {
     width: 100%;
     padding: 12px;
@@ -85,6 +85,9 @@ input[type="password"] {
     font-weight: bold;
     margin-top: 10px;
     transition: background-color 0.3s;
+    
+    /* Règle de résilience */
+    pointer-events: auto !important; 
 }
 
 .btn-primary:hover {
@@ -101,7 +104,7 @@ input[type="password"] {
     text-align: center;
 }
 
-/* Séparateur pour le lien S'inscrire */
+/* Lien S'inscrire */
 .separator {
     border-top: 1px solid var(--border-color);
     margin: 20px 0 15px 0;
